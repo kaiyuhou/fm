@@ -1,5 +1,6 @@
 # coding: utf-8
 import requests
+from Song import *
 
 class doubanFMApi():
     API_HOST_URL = "https://api.douban.com"
@@ -123,4 +124,5 @@ class doubanFMApi():
             # u'id': u'1407383',
             # u'ssid': u'e200'}}
 
-        print rsp
+        return map(Song.parse, rsp)
+
